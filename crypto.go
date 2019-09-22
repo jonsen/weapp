@@ -10,7 +10,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"io"
-	"sort"
+	//"sort"
 	"strings"
 )
 
@@ -54,7 +54,7 @@ func validateSignature(signature string, parts ...string) bool {
 
 // 拼凑签名
 func createSignature(parts ...string) string {
-	sort.Strings(parts)
+	//sort.Strings(parts)
 	raw := sha1.Sum([]byte(strings.Join(parts, "")))
 
 	return hex.EncodeToString(raw[:])
